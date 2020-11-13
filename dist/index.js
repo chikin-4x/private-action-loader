@@ -11990,7 +11990,7 @@ function runAction(opts) {
                         ? path_1.join(opts.workDirectory, opts.actionDirectory)
                         : opts.workDirectory;
                     core.info("Reading " + actionPath);
-                    actionFile = fs_1.readFileSync(actionPath + "/action.yml", 'utf8');
+                    actionFile = try { fs_1.readFileSync(actionPath + "/action.yml", 'utf8') } catch { fs_1.readFileSync(actionPath + "/action.yml", 'utf8') };
                     action = yaml_1.parse(actionFile);
                     if (!(action && action.name && action.runs && action.runs.main)) {
                         throw new Error('Malformed action.yml found');

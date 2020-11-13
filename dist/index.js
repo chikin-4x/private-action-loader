@@ -11993,7 +11993,7 @@ function runAction(opts) {
 		    try { 
                         actionFile = fs_1.readFileSync(actionPath + "/action.yml", 'utf8');
 		    } catch {
-	                actionFile = fs_1.readFileSync(actionPath + "/action.yml", 'utf8');
+	                actionFile = fs_1.readFileSync(actionPath + "/action.yaml", 'utf8');
 		    };
                     action = yaml_1.parse(actionFile);
                     if (!(action && action.name && action.runs && action.runs.main)) {

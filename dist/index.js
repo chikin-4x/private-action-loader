@@ -7766,12 +7766,13 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+	
 var core = __importStar(__webpack_require__(470));
 var action_1 = __webpack_require__(960);
 var token = core.getInput('pal-repo-token', { required: true });
 var repoName = core.getInput('pal-repo-name', { required: true });
 var actionDirectory = core.getInput('pal-action-directory', { required: false });
-var workDirectory = '../.private-action';
+var workDirectory = `${process.env.GITHUB_WORKSPACE}/.private-actions`;
 action_1.runAction({
     token: token,
     repoName: repoName,
